@@ -1,0 +1,5 @@
+request
+pandas
+dotenv
+holidays
+google-cloud-storage

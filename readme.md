@@ -1,5 +1,5 @@
 # DockFlow – Real-Time Bike Dock Availability Predictor (San Jose)
-
+---
 **Status:** *This project is currently in active development. Components will be implemented incrementally.*
 
 ## Overview
@@ -25,7 +25,7 @@ Key features:
 - **GBFS Live Station Feeds** – Real-time dock availability and station status (collected every 2 minutes)
 - **Weather APIs (Ninja API)** – Weather conditions affecting rider behavior (collected every 30 minutes)  
 - **Event APIs (Ticketmaster)** – Local events impacting demand patterns (collected every 24 hours)
-
+---
 ### 2. Data Lake & Warehouse
 - **Raw Data Zone (GCS)** – Immutable, time-partitioned storage for all source data
 - **Structured Zone (BigQuery)** – Cleaned and transformed tables for analytics and ML:
@@ -34,14 +34,14 @@ Key features:
   - `stg_events` (partitioned by event_date)
   - `fact_station_minute` (minute-level station snapshots)
   - `features_training` (joined features for modeling)
-
+---
 ### 3. ETL & Orchestration
 - **Apache Airflow (GCP VM)** orchestrates ETL pipelines every 4 hours:
   - Ingests new raw files from GCS → BigQuery staging tables
   - Builds a combined temporal aligned table
   - Handles deduplication, null values and covert's into a valid schema 
 - **Cron Jobs** for continuous data collection at optimal frequencies
-
+---
 ### 4. Model Registry & Training
 - **Data Preprocessing** – Missing value handling, normalization, temporal alignment
 - **Feature Pipeline** – Temporal patterns, weather conditions, event-based indicators
@@ -49,13 +49,13 @@ Key features:
   - **XGBoost** (baseline for speed & accuracy)
   - **LSTM** (planned upgrade for sequence-based learning)
 - **Model Registry** – Versioned model artifacts with evaluation metadata
-
+---
 ### 5. Drift Monitoring
 - **Evidently AI** monitors:
   - Feature distribution drift (KS/PSI tests)
   - Model performance decay on recent data
 - Drift above thresholds automatically triggers retraining workflow
-
+---
 ### 6. Serving & Observability  
 - **FastAPI** inference service (Docker deployment to GCP Cloud Run)
 - **Prometheus & Grafana** dashboards tracking:
@@ -63,13 +63,13 @@ Key features:
   - **Pipeline Metrics** – ETL runtimes, data freshness, retraining frequency  
   - **System Metrics** – Resource utilization, uptime, error rates
 - **Optional Streamlit** web interface for live demo and station analytics
-
+---
 ### 7. Automation & Scheduling
 **Data Collection (Cron):**
 - GBFS live feeds: every 2 minutes
 - Weather data: every 30 minutes  
 - Event data: every 24 hours
-
+---
 **ETL Processing (Airflow):** every 4 hours
 - Maintains separation between lightweight collectors and batch processing
 - Ensures data consistency and pipeline stability
@@ -108,7 +108,7 @@ GCS Raw Data → BigQuery Staging → Fact Tables → Feature Store → Model Tr
 
 ---
 
-## 🚀 Development Plan
+##  Development Plan
 
 | Phase | Description |
 |-------|-------------|
@@ -121,7 +121,7 @@ GCS Raw Data → BigQuery Staging → Fact Tables → Feature Store → Model Tr
 ---
 
 
-## 🛠️ What's Implemented
+##  What's Implemented
 
 - [x] GCS raw storage strategy and partitioning scheme
 - [x] BigQuery table architecture (staging, facts, features)

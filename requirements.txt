@@ -3,3 +3,7 @@ pandas
 dotenv
 holidays
 google-cloud-storage
+airflow
+apache-airflow-providers-google>=12.0.0
+python-dotenv
+pendulum

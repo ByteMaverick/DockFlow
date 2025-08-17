@@ -1,0 +1,18 @@
+[
+  {
+    "station_id": "46b4ef45-b06b-40eb-9fdf-9bc8ff104a4f",
+    "last_reported": 1754985922,
+    "num_ebikes_available": 2,
+    "legacy_id": "299",
+    "num_docks_disabled": 0,
+    "num_scooters_unavailable": 0,
+    "eightd_has_available_keys": false,
+    "num_bikes_disabled": 0,
+    "is_renting": 1,
+    "num_docks_available": 7,
+    "num_bikes_available": 8,
+    "num_scooters_available": 0,
+    "is_installed": 1,
+    "is_returning": 1
+  }
+]
